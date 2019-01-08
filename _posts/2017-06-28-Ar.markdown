@@ -1,0 +1,17 @@
+---
+layout:     post
+title:      "NSDI of Ar"
+subtitle:   ""
+date:       2017-06-28 20:00:00
+author:     "陈实"
+header-img: ""
+catalog: true
+tags:
+    - NSDI
+---
+
+&emsp;&emsp;主要参考了[这篇](http://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=7122219)文章，对少周期激光场下的非序列双电离作一回顾。
+
+&emsp;&emsp;在少周期激光场下，电子动量关联分布很明显地受到载波相位（CEP）的影响，下图显示了不同CEP下Ar的电子动量关联分布。不过好像并没有见到有对CEP如何影响关联分布作具体解释的文章。![](http://orq05s7wy.bkt.clouddn.com/phase-dependent.PNG)
+
+&emsp;&emsp;在B.Bergues等人的[文章](https://www.nature.com/articles/ncomms1807)中对
