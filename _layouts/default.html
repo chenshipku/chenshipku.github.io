@@ -9,7 +9,8 @@ layout: compress
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" href="/static/img/favicon.ico" />
     <title>{% if page.title %}{{ page.title }} - {{ site.title }}{% else %}{{ site.author }}{% endif %}</title>
-    <meta name="author" content="{{ site.author }}" />
+    <!--<meta name="author" content="{{ site.author }}" />-->
+    <meta name="author" content="{陈实}" />
     <meta name="description" content="{% if page.title %}{{ page.title }}{% else %}{{ site.description }}{% endif %}" />
     <meta name="keywords" content="{% if page.title %}{{ page.title }}, {{ site.title }}, {% for categ in page.categories %}{{ categ }}{% if forloop.last == false %}, {% endif %}{% endfor %}{% else %}{{ site.title }}, {% for category in site.categories %}{% capture categories_slug %}{{ category | first }}{% endcapture %}{% for categ in categories_slug %}{{ categ }}{% endfor %}{% if forloop.last == false %}, {% endif %}{% endfor %}{% endif %}" />
     <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml">
@@ -148,7 +149,8 @@ layout: compress
       <div class="col-sm-8 col-offset-1 main-layout">
         {{ content }}
         <footer>
-          &copy; {{ site.author }}
+          &copy;{陈实} - Powered by Jekyll.
+          <!--&copy; {{ site.author }}
           {% if site.github %}
             - <a href="{{ site.github }}">{{ site.github }}</a> - Powered by Jekyll.
           {% endif %}
@@ -156,6 +158,7 @@ layout: compress
             <iframe src="https://ghbtns.com/github-btn.html?user=chenshipku&repo=chenshipku.github.io&type=star&count=true" frameborder="0" scrolling="0" width="85" height="20px"></iframe>
             <iframe src="https://ghbtns.com/github-btn.html?user=chenshipku&repo=chenshipku.github.io&type=fork&count=true" frameborder="0" scrolling="0" width="85" height="20px"></iframe>
           </div>
+          -->
         </footer>
       </div>
 
