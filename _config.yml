@@ -1,10 +1,10 @@
-title: Stack Problems
-description: My Personal Stack Problems
-author: Agus Makmun
-github: https://github.com/agusmakmun
-about: I am freelance developer. Currently doing more in backend, focused in Python and Django.
-disqus_shortname: stackproblems
-google_analytics: UA-XXXXXXXX-Y
+title: ElectroMaster
+description: stay simple, stay naive
+author: 陈实
+github: https://github.com/chenshipku
+about:
+#disqus_shortname: stackproblems
+#google_analytics: UA-XXXXXXXX-Y
 avatar_url: /static/img/avatar.jpg
 
 enableTags: true
@@ -16,30 +16,18 @@ collections:
     permalink: /project/:path/
 
 social:
-    - icon: fa-facebook
-      link: "#"
-    - icon: fa-twitter
-      link: "https://twitter.com/agusmakmun6"
-    - icon: fa-linkedin
-      link: "https://www.linkedin.com/in/summonagus"
-    - icon: fa-stack-exchange
-      link: "#"
+    - icon: fa-zhihu
+      link: "https://www.zhihu.com/people/chenshiPKU/activities"
     - icon: fa-github
-      link: "https://github.com/agusmakmun"
+      link: "https://github.com/chenshipku"
 
-share:
-  twitter_username: agusmakmun6
-  fb_appid: 1749788565247320
 
 urls:
     - text: About Me
       url: /about/
-    - text: My Projects
-      url: /projects/
-    - text: XML Feed
-      url: /feed.xml
 
-url: "https://agusmakmun.github.io"
+
+url: "https://chenshipku.github.io"
 baseurl: ""
 paginate: 20
 per_page: 20
