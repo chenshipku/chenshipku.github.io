@@ -1,6 +1,6 @@
 title: ElectroMaster
 description: stay simple, stay naive
-author: ElectroMaster
+author: 陈实
 github: https://github.com/chenshipku
 about:
 #disqus_shortname: stackproblems
@@ -17,7 +17,7 @@ collections:
 
 social:
     - icon: fa-zhihu
-      link: "https://www.zhihu.com/people/chenshiPKU/activities"
+      link: "https://www.zhihu.com/people/chenshiPKU"
     - icon: fa-github
       link: "https://github.com/chenshipku"
 
