@@ -1,110 +1,57 @@
-# Site settings
-title: "ElectroMaster"
-SEOTitle: ElectroMaster
-header-img: img/home-bg.jpg
-email: chenshipku@gmail.com
-description: ""
-keyword: "陈实 ElectroMaster"
-url: "chenshipku.github.io"              # your host, for absolute URL
-baseurl: ""                             # for example, '/blog' if your blog hosted on 'host/blog'
+title: Stack Problems
+description: My Personal Stack Problems
+author: Agus Makmun
+github: https://github.com/agusmakmun
+about: I am freelance developer. Currently doing more in backend, focused in Python and Django.
+disqus_shortname: stackproblems
+google_analytics: UA-XXXXXXXX-Y
+avatar_url: /static/img/avatar.jpg
 
+enableTags: true
+tagarray: []
 
+collections:
+  project:
+    output: true
+    permalink: /project/:path/
 
-# SNS settings
-RSS: false
-#weibo_username:
-zhihu_username:     chenshiPKU
-github_username:    chenshipku
-#twitter_username:
-#facebook_username:
-# linkedin_username:  firstname-lastname-idxxxx
+social:
+    - icon: fa-facebook
+      link: "#"
+    - icon: fa-twitter
+      link: "https://twitter.com/agusmakmun6"
+    - icon: fa-linkedin
+      link: "https://www.linkedin.com/in/summonagus"
+    - icon: fa-stack-exchange
+      link: "#"
+    - icon: fa-github
+      link: "https://github.com/agusmakmun"
 
+share:
+  twitter_username: agusmakmun6
+  fb_appid: 1749788565247320
 
+urls:
+    - text: About Me
+      url: /about/
+    - text: My Projects
+      url: /projects/
+    - text: XML Feed
+      url: /feed.xml
 
-# Build settings
-# from 2016, 'pygments' is unsupported on GitHub Pages. Use 'rouge' for highlighting instead.
-highlighter: rouge
-permalink: pretty
-paginate: 10
-exclude: ["less","node_modules","Gruntfile.js","package.json","README.md","README.zh.md"]
-anchorjs: true                          # if you want to customize anchor. check out line:181 of `post.html`
-
-
-
-# Gems
-# from PR#40, to support local preview for Jekyll 3.0
-gems: [jekyll-paginate]
-
-
-
-# Markdown settings
-# replace redcarpet to kramdown,
-# although redcarpet can auto highlight code, the lack of header-id make the catalog impossible, so I switch to kramdown
-# document: http://jekyllrb.com/docs/configuration/#kramdown
+url: "https://agusmakmun.github.io"
+baseurl: ""
+paginate: 20
+per_page: 20
+paginate_path: "/page/:num/"
 markdown: kramdown
-kramdown:
-    input: GFM
-paginate: 9
-permalink: /:year/:month/:day/:title/
 gems:
-    - jekyll-paginate
-    - jekyll-sitemap
-    - jekyll-feed
-    - jemoji
+  - jekyll-paginate
+  - jekyll-gist
 
-# Analytics settings
-# Baidu Analytics
-# ba_track_id: [your track id]
-
-# Google Analytics
-ga_track_id: 'UA-101165951-1'            # Format: UA-xxxxxx-xx
-ga_domain: chenshi.space
-
-
-
-# Sidebar settings
-sidebar: false                           # whether or not using Sidebar.
-sidebar-about-description: "做点原子分子的模拟"
-sidebar-avatar: /img/avatar-hux.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
-
-
-# Progressive Web Apps
-chrome-tab-theme-color: "#000000"
-service-worker: true
-
-
-
-# links
-links: [
-    {
-    #     title: "Su",
-    #     href: "http://su.gallery/"
-    # },{
-        title: "北京大学",
-        href: "http://www.pku.edu.cn"
-    },{
-        title: "北京大学应用物理与技术研究中心",
-        href: "http://capt.pku.edu.cn"
-    },{
-        title: "北京大学物理学院",
-        href: "http://www.phy.pku.edu.cn"
-    },{
-        title: "陈京老师RG主页",
-        href: "https://www.researchgate.net/profile/Jing_Chen46"
-    },{
-        title: "彭良友老师主页",
-        href: "http://www.phy.pku.edu.cn/~lypeng/index_cn.html"
-    },{
-        title: "华中科大超快光学实验室",
-        href: "http://ufolab.phys.hust.edu.cn/"
-    },{
-        title: "吉林大学原子与分子物理研究所",
-        href: "http://iamp.jlu.edu.cn/"
-    },{
-        title: "国防科大原子分子物理课题组",
-        href: "http://ampg.nudt.edu.cn/"
-    },{
-        title: "张策的blog",
-        href: "https://www.psi3770.com/"
-    }
-]
+compress_html:
+  clippings: all
+  comments: ["<!-- ", " -->"]
+  endings: all
+  ignore:
+    envs: ['development']
