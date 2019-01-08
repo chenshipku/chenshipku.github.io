@@ -33,9 +33,3 @@ $$p(t,t_0)=\int_{t_0}^t E_0(t')\sin wt'dt'=\frac{1}{w}E_0(t_0)\cos wt_0-\frac{1}
 &emsp;&emsp;另外值得一提的是，一开始处理氢分子时，和氦原子一样，认为第一个电子隧穿之后，整个体系就遵循牛顿定律进行演化，然而并没有展现出取向依赖性，与[已有的氮分子实验](https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.95.203003)不符。后来将内层电子的电离也按照量子隧穿进行处理，才得到了上面的结果。
 
 &emsp;&emsp;毕业论文还做了一部分少周期激光场下氩原子的非序列双电离，这个还没做完，是一个挺难填的坑，回头有空写下这一问题的背景。
-
----
-
-English version
-
-The topic of my undergraduate thesis is non-sequential double ionization(NSDI). When the intensity of laser field is relatively strong(e.g. $$10^{16}W/cm^2$$), it can be consumed that the electrons are ionized one by one,which means there doesn't exist electron correlation in the ionization process. The relation of ionization rate vs field intensity is given by [ADK formular](http://www.jetp.ac.ru/cgi-bin/dn/e_064_06_1191.pdf). However, 
