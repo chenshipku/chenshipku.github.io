@@ -10,7 +10,13 @@ tags:
     -   NSDI
 ---
 
-&emsp;&emsp;在我之前的印象中，量子隧穿只能发生在微观体系中得到观测，而实际上，量子隧穿可以发生的空间尺度是从飞米到毫米，其温度尺度也是从nK到百千万K。举几个例子，约瑟夫森结中有宏观量子隧穿[PRL 95,010402](https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.95.010402)，纳米磁分子中有量子隧穿，核聚变中存在量子隧穿，非序列双电离中也存在量子隧穿。
+## 隧穿现象
+量子隧穿可以发生的空间尺度是从飞米到毫米，其温度尺度也是从nK到百千万K。例如，约瑟夫森结中有宏观量子隧穿[PRL 95,010402](https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.95.010402)，纳米磁分子中有量子隧穿，核聚变中存在量子隧穿，非序列双电离中也存在量子隧穿。
+
+## 隧穿几率
+
+### 朗道
+[image](https://github.com/chenshipku/chenshipku.github.io/tree/master/img/in-post/Parabolic coordinates.png)
 
 &emsp;&emsp;每条电离轨道的权重如何确定直接决定了最终的模拟结果。这里介绍下几种不同情况下轨道权重如何确定。
 
