@@ -16,7 +16,34 @@ tags:
 ## 隧穿几率
 
 ### 朗道
-![image](https://github.com/chenshipku/chenshipku.github.io/tree/master/img/in-post/Parabolic coordinates.png)
+朗道早已在《量子力学》中用WKB近似方法给出了静电场下氢原子电子隧穿几率的表达式，现简述如下。
+
+在静电场与库仑场复合场作用下，有
+
+$$(\frac{1}{2}\Delta+I_p+\frac{1}{r}-\epsilon\cdot z)\Psi=0\ (I_p<0)$$
+
+在抛物线坐标系下，
+
+$$x=\sqrt{\xi\eta}cos\phi,\ y=\sqrt{\xi\eta}sin\phi,\ z=\frac{\xi-\eta}{2},\ r=\sqrt{x^2+y^2+z^2}$$
+
+$$\xi=r+z,\ \eta=r-z,\ \phi=tan^{-1}(y/x)$$
+
+$$\frac{4}{\xi+\eta}[\frac{\partial}{\partial\xi}(\xi\frac{\partial\Psi}{\partial\xi})+\frac{\partial}{\partial\eta}(\eta\frac{\partial\Psi}{\partial\eta})]+\frac{1}{\xi\eta}\frac{\partial^2\Psi}{\partial\phi^2}+[2I_p+\frac{4}{\xi+\eta}-\epsilon(\eta-\xi)]\Psi=0$$
+
+将$$\Psi$$写成分离变量的形式$$\Psi=f_1(\xi)f_2(\eta)e^{im\phi}=\frac{\chi_1(\xi)}{\chi_2(\eta)}e^{im\phi}$$，就可以分离变量为
+
+$$\frac{d^2{\chi_1}}{d\xi^2}+(\frac{I_p}{2}+\frac{\beta_1}{\xi}-\frac{m^2-1}{4\xi^2}-\frac{\epsilon}{4}\xi)\chi_1=0$$
+
+$$\frac{d^2{\chi_2}}{d\eta^2}+(\frac{I_p}{2}+\frac{\beta_2}{\eta}-\frac{m^2-1}{4\eta^2}+\frac{\epsilon}{4}\eta)\chi_2=0$$
+
+其中$$\beta_1+\beta_2=1$$,当电场强度$$\epsilon>0$$时向$$\eta$$方向隧穿；$$\epsilon<0$$时向$$\xi$$方向隧穿。
+
+隧穿几率
+
+$$w=\int_0^\infty \left|\Psi\right|^2v_z2\pi\rho d\rho$$
+
+其中$$\rho=\sqrt{x^2+y^2}=\sqrt{\xi\eta},\ v_z\approx\sqrt{2(-\frac{1}{2}+\frac{1}{2}\epsilon\eta)}=\sqrt{\epsilon\eta-1}$$
+
 
 &emsp;&emsp;每条电离轨道的权重如何确定直接决定了最终的模拟结果。这里介绍下几种不同情况下轨道权重如何确定。
 
