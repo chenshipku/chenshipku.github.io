@@ -16,7 +16,7 @@ tags:
 ## 隧穿几率
 
 ### 朗道
-[image](https://github.com/chenshipku/chenshipku.github.io/tree/master/img/in-post/Parabolic coordinates.png)
+![image](https://github.com/chenshipku/chenshipku.github.io/tree/master/img/in-post/Parabolic coordinates.png)
 
 &emsp;&emsp;每条电离轨道的权重如何确定直接决定了最终的模拟结果。这里介绍下几种不同情况下轨道权重如何确定。
 
