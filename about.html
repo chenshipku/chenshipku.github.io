@@ -85,7 +85,7 @@ comments:
 
 
 {%if page.comments %}
-  {% assign sorted_comments = (page.comments | sort: 'date') %}
+  {% assign sorted_comments = page.comments | sort: 'date' %}
 {% endif %}
 {% for c in sorted_comments %}
   <div class="media">

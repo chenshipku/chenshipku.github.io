@@ -15,7 +15,7 @@ tags:
 
 ## 隧穿几率
 
-### 朗道
+### 静电场 & 氢原子基态
 朗道早已在《量子力学》中用WKB近似方法给出了静电场下氢原子电子隧穿几率的表达式，现简述如下。
 
 在静电场与库仑场复合场作用下，有
@@ -44,32 +44,64 @@ $$w=\int_0^\infty \left|\Psi\right|^2v_z2\pi\rho d\rho$$
 
 其中$$\rho=\sqrt{x^2+y^2}=\sqrt{\xi\eta},\ v_z\approx\sqrt{2(-\frac{1}{2}+\frac{1}{2}\epsilon\eta)}=\sqrt{\epsilon\eta-1}$$
 
+对于基态氢原子，有$$I_p=-\frac{1}{2},\ m=0,\ \beta_1=\beta_2=\frac{1}{2}, \psi_{g.s.}=\frac{1}{\sqrt{\pi}}e^{-\frac{1}{2}(\xi+\eta)}$$
 
-&emsp;&emsp;每条电离轨道的权重如何确定直接决定了最终的模拟结果。这里介绍下几种不同情况下轨道权重如何确定。
+以$$\epsilon>0$$为例，在$$\eta$$方向隧穿。当$$\eta>\eta_0(1\ll\eta_0\ll\frac{1}{\epsilon})$$时，按照WKB近似，波函数是准经典的:
 
-&emsp;&emsp;最简单的是对RII机制主导的NSDI模拟。这种情况下，第一个电子先电离 ，电离后的初始位置(0,0,z)由隧穿理论得到，初始速度为$$(v_p\cos\theta,v_p\sin\theta,0)$$，按理说$$v_p$$应当从0到无穷都有可能，但由于$$v_p$$太大时，隧穿几率太小，所以模拟时只考虑$$v_p\in(0,1)$$。之后隧穿电离与具有确定能量的内层电子（由微正则分布生成）就遵循牛顿定律进行演化。权重W等于第一个电子的纵向速度分布$$w_0$$乘上它的隧穿几率$$w_1$$。
+$$\chi=\frac{C}{\sqrt{p}}exp(i\int_{\eta_0}^\eta pd\eta+\frac{1}{4}i\pi)$$
 
-&emsp;&emsp;对于阈下区域，RESI机制主导的NSDI过程，还需要考虑第二个电子的隧穿[PRA 64,043412](https://link.aps.org/doi/10.1103/PhysRevA.64.043412)。当电子到达反转点时，即dz/dt=0(实际处理可限定一个范围，如-0.01到0.01）,$$E\cdot z<0$$,它将具有一定几率穿过势垒。由WKB近似可给出隧穿几率为：
+其中$$p(\eta)=\sqrt{-\frac{1}{4}+\frac{1}{2\eta}+\frac{1}{4\eta^2}+\frac{\epsilon\eta}{4}}.$$
 
-  $$P_{tun}=exp[-2\sqrt{2}\int_{z_i^{in}}^{z_i^{out}}\sqrt{V(z_i)-V(z_i^{in})}dz_i]$$
+认为$$\eta<\eta_0$$时，波函数为基态波函数，根据连续条件($$\eta=\eta_0,\psi=\psi_{g.s.}$$)，可以得到系数C，于是有
 
-  其中$$z_i^{in},z_i^{out}$$是方程
+$$\chi=(\frac{\eta_0\left| p_0\right|}{\pi p})^{\frac{1}{2}}exp(-\frac{\xi+\eta_0}{2}+i\int_{\eta_0}^\eta pd\eta+\frac{1}{4}i\pi)$$
 
-  $$V(z_i)=-2/\big |z_i\big |+z_i\epsilon(t)=-2/\big|z_i^{in}\big|+z_i^{in}\epsilon(t)$$
+$$\left|\chi\right|^2=\frac{\eta_0\left| p_0\right|}{\pi p}exp(-\xi-2\int_{\eta_0}^{\eta_1}\left| p\right|d\eta -\eta_0)$$
 
-  的两个根(忽略了电子电子之间的库仑作用)，且有
+其中$$p(\eta_1)=0.$$
 
-  $$\big|z_i^{in}\big|<\big|\sqrt{2/\epsilon}\big|<\big|z_i^{out}\big|$$
+当$$\eta\gg 1$$时，
 
-很容易得到，
+$$p\approx\frac{1}{2}\sqrt{\epsilon\eta-1},\ \left| p_0\right|\approx \frac{1}{2},\ \eta_1\approx\frac{1}{\epsilon}.$$
 
-$$\epsilon>0$$时，$$z_i^{out}=\frac{2}{\epsilon\cdot z_i^{in}}$$;
+$$\left|\chi\right|^2=\frac{4}{\pi\epsilon\sqrt{\epsilon\eta-1}}exp(-\xi-\frac{2}{3\epsilon})$$
 
-$$\epsilon<0$$时,$$z_i^{out}=-\frac{2}{\epsilon\cdot z_i^{in}}$$.
+$$w=\int_0^\infty \left| \chi\right|^2\pi\sqrt{\epsilon\eta-1}d\xi=\frac{4}{\epsilon}exp(-\frac{2}{3\epsilon})$$
 
-下图是隧穿几率随隧穿入口位置的变化曲线，可见隧穿位置靠近核时，势垒过深，隧穿几率可忽略不计。随着隧穿入口向势垒顶端靠近，隧穿几率迅速增加。由此，我在想，高激发态电子的隧穿几率应该是要比低激发态电子的隧穿几率要高得多（高激发态的-2/z小，z大，隧穿几率大）。
-![](http://orq05s7wy.bkt.clouddn.com/e2tunnel.PNG)
+上式就是注明的静电场下氢原子电子隧穿几率公式，之后推导的公式在静电场加氢原子体系下应当回归到这个公式。
 
-以上是隧穿电离情况，若是激光场场强足够大，会由隧穿电离转为越势电离。
-![](http://orq05s7wy.bkt.clouddn.com/threeionization.PNG)
-在
+另外，上述推导过程还可以得到隧穿出口位置。以$$\eta$$方向隧穿为例，分离变量后有如下形式：
+
+$$\frac{d^2\Psi}{dx^2}+2(\frac{I_p}{4}-U)$$
+
+$$U(\eta)=-\frac{\beta_2}{2\eta}+\frac{m^2-1}{8\eta^2}-\frac{\epsilon}{8}\eta$$
+
+沿隧穿方向根据$$\frac{I_p}{4}=U(\eta_0)$$可得$$\eta_0$$，垂直隧穿方向有$$\xi_0=0$$，抛物坐标系换到直角坐标系有
+
+$$x=\frac{\xi\eta}cos\phi=0,\ y=\sqrt{\xi\eta}sin\phi=0,\ z=\frac{\xi-\eta}{2}=-\frac{\eta_0}{2}$$
+
+即隧穿位置为$$(0,0,-\frac{\eta_0}{2})$$
+
+### 静电场 & 氢原子任意束缚态
+一般的，处于任意束缚态的电子隧穿几率为
+
+$$w=C_{n^* l}^2E\frac{(2l+1)(l+\left|m\right|)}{2^{\left|m\right|}(\left|m\right|)!(l-\left|m\right|)!}(\frac{2\epsilon_0}{\epsilon})^{2n^* -\left|m\right|-1}exp(-\frac{2\epsilon_0}{3\epsilon})$$
+
+以氢原子为例，基态时有$$E=\frac{1}{2},\ n^* =1,\ l=m=0,\ C_{n^* l}^2=\frac{2^{2n^* }}{n^* (n^* +l)!(n^* -l-1)!}=4$$
+
+有$$w=\frac{4}{\epsilon}exp(-\frac{2}{3\epsilon})$$，回归到朗道隧穿几率公式。
+
+### ADK隧穿几率
+在$$n^* \gg l$$时，有$$C_{n^* l}=(\frac{2e}{n^* })^{n^* }\frac{1}{(2\pi n^* )^{1/2}}$$，带入上面的隧穿几率表达式即可得ADK隧穿几率表达式
+
+$$w_{ADK}=\frac{\epsilon}{8\pi Z}(\frac{4eZ^3}{\epsilon n*^4})^{2n^* }(\frac{2Z^3}{\epsilon n*^3})^{-\left|m\right|}\frac{(2l+1)(l+\left|m\right|)}{2^{\left|m\right|}(\left|m\right|)!(l-\left|m\right|)!}exp(-\frac{2Z^3}{3n*^3\epsilon})$$
+
+对于s态电子，有
+
+$$w_{ADK_s}=\frac{\epsilon D^2}{8\pi Z}exp(-\frac{2(I_p)^{3/2}}{3\epsilon})$$
+
+其中$$D=(\frac{4eZ^3}{\epsilon n*^4})^{n*},\ I_p=E=\frac{Z^2}{2n*^2}$$
+### 绝热效应
+
+
+### 分子隧穿几率
