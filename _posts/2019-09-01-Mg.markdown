@@ -1,0 +1,32 @@
+---
+layout:     post
+title:      "镁原子非次序双电离的波长依赖"
+subtitle:   ""
+date:       2019-09-01
+author:     "陈实"
+header-img: ""
+catalog: true
+tags:
+    - NSDI
+---
+
+### 背景介绍：
+非次序双电离(Non-Sequential Double Ionization, NSDI)可以用三步模型来解释：最外层电子隧穿，在激光场中振荡获得能量返回，内层电子被碰撞出去发生NSDI。所谓非次序，对应的是次序双电离，即第一个电子被电场电离后第二个电子被电场电离，第二个电子的电离主要由电场驱动，而不是第一个电子返回碰撞导致（其实我觉得将非次序双电离称为关联双电离更好）。NSDI的产率以及电子末动量分布与激光强度、波长、椭偏度有关，也与原子，分子种类有关。一般认为NSDI有两种，一是直接碰撞电离，即外层电子返回碰撞直接把内层电子碰撞出去，另一种可能是外层电子返回碰撞只把内层电子碰撞到激发态，处于激发态的内层电子随后在激光场的帮助下再电离出去，我们称之为碰撞激发电离。
+![level](https://github.com/chenshipku/chenshipku.github.io/blob/master/img/in-post/Mg/level.jpg)
+本文主要聚焦于激光波长对于镁原子NSDI的影响。随激光波长增加，一方面周期变长，波包在激光场中运动时间变长，波包扩散得更明显；另一方面，电子在激光场中获得的能量变大（有质动力能$U_p\propto\lambda^2I$），导致碰撞电离截面以及碰撞激发截面相应变化。以往对于波长依赖NSDI的研究主要聚焦于稀有气体，如[PRL.103.173001](https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.103.173001)，[PRA.95.063415](https://journals.aps.org/pra/abstract/10.1103/PhysRevA.95.063415)，而关于镁原子双电离的研究也是主要聚焦于800nm以及圆偏场下依然可观的双电离率，相关文章有[PRA.64.043413](https://journals.aps.org/pra/abstract/10.1103/PhysRevA.64.043413)，[PRL.105.083002](https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.105.083002)，[PRL.108.103601](https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.108.103601)，[](https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.110.253002)，[JCP.147.174302](https://aip.scitation.org/doi/10.1063/1.5001668)等。本文的创新点主要是实验上得到了长波长下镁原子的双电离率。
+
+### 实验：
+镁原子束流通过电加热原子炉产生，波长可调的中红外飞秒激光通过光参量放大(OPA)产生，电离得到的离子信号通过飞行时间(TOF)谱仪得到。实验结果如下：
+![Exp](https://github.com/chenshipku/chenshipku.github.io/blob/master/img/in-post/Mg/exp.jpg)
+可见，在$3.7\times 10^{13}W/cm^2\sim 7\times 10^{13}W/cm^2$显示出了比较明显的膝盖形结构，我们于是选取中间的$5\times 10^{13}W/cm^2$以及$5\times 10^{13}W/cm^2$的光强进行理论计算，探究双电离率随波长的变化关系。
+
+### 计算：
+最初我们使用通常的半经典方法进行计算，计算结果与实验相差甚远，于是后来借助了截面(cross section)的方法来计算双电离率。此前已经有一些类似的工作，取得了与实验比较符合的结果，例如[PRL.86.3522](https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.86.3522),[PRA.63.033404](https://journals.aps.org/pra/abstract/10.1103/PhysRevA.63.033404),[PRA.68.043412](https://journals.aps.org/pra/abstract/10.1103/PhysRevA.68.043412),[PRL.108.033002](https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.108.033002)等。
+如下式，
+$$\frac{\int d E \sigma(E) W_{\mathrm{ret}}(E) \frac{e^{-b^{2} / a_{0}^{2}}}{\pi a_{0}^{2}}}{\int d E W_{\mathrm{ret}}(E)},$$
+分母上$W_{\mathrm{ret}}(E)$是每条返回轨道的权重，积分后就是所有返回轨道的权重。分子上$\frac{e^{-b^{2} / a_{0}^{2}}}{\pi a_{0}^{2}}$是波包扩散项，其中$a_{0}$是常数，b是碰撞参数，假设激光场沿z轴，b即返回z=0平面时离原点的距离$\sqrt{x^2+y^2}$。b=0时这一项最大，b变大时这项指数变小，相对应的物理含义是波包返回时离核越近，电离或者激发几率越大。$\sigma(E)$是碰撞电离截面或者碰撞激发截面，意为某一能量的电子返回碰撞可以将内层电子直接碰撞电离或者碰撞到激发态的几率。分子上的这三项相乘得到的就是电子返回核附近且将内层电子碰撞电离或碰撞到激发态的几率，也就是直接碰撞电离或碰撞激发电离的权重。该项除以分母上所有返回电子的权重就是双电离率。本文中碰撞电离截面取自文献[JPB.37.1503(2004)](https://iopscience.iop.org/article/10.1088/0953-4075/37/7/011)，随返回能量增加，电离截面先迅速增加，后缓慢下降；碰撞激发截面取自[JETP42,989(1975)](http://jetp.ac.ru/cgi-bin/e/index/e/42/6/p989?a=list)，计算中仅考虑了第一激发态，激发截面随返回能量也是先快速上升，后缓慢下降。但当把两个放在一起比较时可以发现激发截面大约比电离截面高一个量级，于是如果我们认为内层电子被激发后全部电离，那么双电离必然是由碰撞激发电离主导，而非直接碰撞电离。
+计算得到的结果如下图，
+![result](https://github.com/chenshipku/chenshipku.github.io/blob/master/img/in-post/Mg/result.jpg)
+ESI代表碰撞激发电离，(e,2e)代表直接碰撞电离。如上所述，ESI相比(e,2e)起绝对主导作用。ESI得到的双电离率随波长变大一直下降，与实验能够较好的定量符合，(e,2e)得到的双电离率随波长变大而先快速上升，后略微下降。由此我们得到结论，在镁原子的双电离过程中，起主导作用的是碰撞激发电离。按照碰撞激发电离图像，理论计算可以很好地得到与实验定量一致的结果。
+接下来，我们来分析两种图像下为何会计算得到上图所示的双电离率波长依赖关系。下图(a)是不同波长下的返回能量分布，(b)是不同波长下的碰撞参数分布。可见随波长变大，返回能量变大，碰撞参数分布变广。这两点很自然，波长变大，$U_p$变大，即从激光场中获得的能量变大，返回能量自然变大。另一方面，波长变大，在激光场中的时间变长，横向扩散也自然变大。对于直接碰撞电离，波长在800nm时，虽然波包扩散小，但电离截面极小，所以双电离率极小。波长增加到1000nm以上时，返回能量对应的电离截面迅速增加，所以双电离率迅速增加。波长继续增加到1800nm之后，电离截面变平，在波包扩散的作用下双电离率变小。而对于碰撞激发电离，800nm时返回能量对应的激发截面就都不小，随波长变大，能量变大，激发截面变小，再加上波包扩散项，两项共同作用使得双电离率随波长增加而下降。
+![Ekb](https://github.com/chenshipku/chenshipku.github.io/blob/master/img/in-post/Mg/Ekb.jpg)
